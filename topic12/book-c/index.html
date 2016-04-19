@@ -107,6 +107,12 @@ h3
       <a class="item" data-tab="05">
         05
       </a>
+      <a class="item" data-tab="06">
+        06
+      </a>
+      <a class="item" data-tab="Exercises">
+        Exercises
+      </a>
     </div>
 </div>
 
@@ -154,7 +160,29 @@ h3
   </div>
   <div  class="ui tab segment lab" data-tab="03">
     <h1>Local Repository</h1>
-<p>You recall that we may be using a 'bootstrap.java' class to load the models. This may cause some difficulty with our deployment, so we will remove it from the project for the moment. You can do this form within Eclipse.</p>
+<p>You recall that we may be using a 'bootstrap.java' class to load the models. This may cause some difficulty with our deployment, so we will remove it from the project for the moment. You can do this from within Eclipse by commenting out the database initialization code:</p>
+<pre><code>import java.util.List;
+
+import play.*;
+import play.jobs.*;
+import play.test.*;
+
+import models.*;
+
+@OnApplicationStart
+public class Bootstrap extends Job 
+{ 
+  public void doJob()
+  {
+    if (User.count() == 0)
+    {
+      // Fixtures.deleteDatabase();
+      // Fixtures.loadModels(&quot;data.yml&quot;);
+    }
+  }
+}
+</code></pre>
+
 <p>Now, in the spacebook project, create a file called '.gitignore'. This is a special file containing a series of patterns for project files we do NOT want uploaded to heroku.</p>
 <p>Here are its contents:</p>
 <pre><code># Ignore all dotfiles...
@@ -206,7 +234,7 @@ public class User extends Model
 
 <p>Add all files (except those matched by .gitignore) to the repo and commit them using these commands:</p>
 <pre><code>git add --all
-git commit -m 'first commit'
+git commit -m &quot;first commit&quot;
 </code></pre>
 
 <p>Verify that everything is ok by running this command</p>
@@ -295,12 +323,12 @@ The response should be somewhat similar to that shown in Figure 4.</p>
 <p><img alt="Figure 2: App and associated database details on Heroku site" src="img/heroku_025.png"></p>
 <p>In order to make use of this database do the following:</p>
 <ul>
-<li>Modify the <em>application.conf</em> file:<ul>
-<li>Comment out any database activation statments such as, for example, <em>db = mem</em>.</li>
-<li>Add the following block to the end of the file.</li>
+<li>Modify the <em>application.conf</em> file by commenting  out any database activation statements such as, for example</li>
 </ul>
-</li>
-</ul>
+<pre><code># db.default=mem
+</code></pre>
+
+<p>Add the following block to the end of the file.</p>
 <pre><code>#================heroku databse config config=========================
 db=${DATABASE_URL}
 jpa.dialect=org.hibernate.dialect.PostgreSQLDialect
@@ -312,7 +340,7 @@ jpa.ddl=update
 <li>In the Heroku terminal add and commit the changes:</li>
 </ul>
 <pre><code>git add --all
-git commit -m 'database configured'
+git commit -m &quot;database configured&quot;
 git push heroku master
 </code></pre>
 
@@ -332,6 +360,73 @@ git push heroku master
 </code></pre>
 
 <p>This should open your web browser and display the application directly on the heroku platform.</p>
+  </div>
+  <div  class="ui tab segment lab" data-tab="06">
+    <h1>Further Modifications</h1>
+<p>Every time you wish to run the application locally for test purposes, you will need to comment out the new database entry:</p>
+<pre><code>#================heroku databse config config=========================
+#db=${DATABASE_URL}
+#jpa.dialect=org.hibernate.dialect.PostgreSQLDialect
+#jpa.ddl=update
+#================end database config heroku config====================
+</code></pre>
+
+<p>... and bring back in the in memory database:</p>
+<pre><code>db.default=mem
+</code></pre>
+
+<p>You may also wish to bring back in the bootstrap load of the models:</p>
+<pre><code>import java.util.List;
+
+import play.*;
+import play.jobs.*;
+import play.test.*;
+
+import models.*;
+
+@OnApplicationStart
+public class Bootstrap extends Job 
+{ 
+  public void doJob()
+  {
+    if (User.count() == 0)
+    {
+      Fixtures.deleteDatabase();
+      Fixtures.loadModels(&quot;data.yml&quot;);
+    }
+  }
+}
+</code></pre>
+
+<p>The above modifications will have to be reversed if you wish to deploy the app again.</p>
+<h2>Deploy Commands:</h2>
+<p>In order to successfully deploy, the app must be 'commited' to github, and then pushed. These are the commands for a regular deplopy (assuming the app has been deployed successfully at least once already):</p>
+<pre><code>git add --all
+git commit -m &quot;SOME DESCRIPTIVE COMMENT&quot;
+git push heroku master
+</code></pre>
+
+<p>The comment above would be a short statement about the changes you have introduced. You will learn more about git commits in future labs.</p>
+  </div>
+  <div  class="ui tab segment lab" data-tab="Exercises">
+    <h1>Exercises</h1>
+<h2>Exercise 1: Experiment with Deploy</h2>
+<p>Deploy the app once and use it. Make a superficial but noticeable change to the UI, and deploy it again. Make sure the changes you made are present in the deployed app.</p>
+<h2>Exercise 2 Experiment with Logs</h2>
+<p>After deploying the app, open a new shell in the same folder as the app, and enter the following command:</p>
+<pre><code>heroku logs --tail
+</code></pre>
+
+<p>This will display the <code>logs</code> from the app, including any log statements you may have left in the application. See if you can these messages appear as you use the app.</p>
+<p>Further log documentation here:</p>
+<ul>
+<li><a href="https://devcenter.heroku.com/articles/logging">https://devcenter.heroku.com/articles/logging</a></li>
+</ul>
+<p>Explore this documentation, and see if there are other useful options.</p>
+<h2>Exercise 3: Heroku UI</h2>
+<p>Log into heroku and explore the various panels and dashboards. See if you can identify the database your app is using. See if you can delete your deployed app using the web ui.</p>
+<h2>Exercise 4: More deployments</h2>
+<p>Can you deploy two versions of your app to Heroku - both running concurrently?</p>
   </div>
 <script>
 $('.ui.menu .item')
