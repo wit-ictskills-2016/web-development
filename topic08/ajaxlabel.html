@@ -7,14 +7,16 @@
   </div>
 </div>
 <script>
-$.ajax({
-  type: 'GET',
-  url: '//wit-ictskills-2016.github.io/web-development/topic08/indexmoodle.html',
-  xhrFields: {
-    withCredentials: false
-  },
-  success: function(data) {
-   $('#output').contents().find('html').html(data);
-  }
-});
+
+  $.ajax({
+    type: 'GET',
+    url: 'http://wit-ictskills-2016.github.io/web-development//topic08/indexmoodle.html',
+    xhrFields: {
+      withCredentials: false
+    },
+    success: function (data) {
+      $('#output').contents().find('html').html(data);
+    }
+  });
+
 </script>

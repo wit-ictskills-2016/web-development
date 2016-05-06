@@ -8,83 +8,15 @@
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js"></script>
     <style>
-
-
-body 
-{
-  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
-}
-
-figcaption
-{
-  margin-bottom: 20px;
-}
-
-.vertical-align
-{
-  display: flex;
-  align-items: center;
-}
-
-.credits
-{
-  min-height:20px;
-}
+      # include "css/main.css"
     </style>
     <base target="_blank" />
   </head>
   <body>
+    # from  "partials/card.html" import card  as card
     <div class="ui raised segment">
-<div class="ui four doubling stackable cards">
-      <div class="ui card">
-    <div class="content">
-        <div class="right floated meta"> <i class="film large icon"></i></div>
-        <div class="header"> Play Tips & Tricks </div>
-    </div>
-    <a href="http://wit-ictskills-2016.github.io/web-development/topic12/talk-1/play-yaml-tips.pdf">
-      <img class="ui bordered rounded image" src="http://wit-ictskills-2016.github.io/web-development/topic12/talk-1/play-yaml-tips.png">
-    </a>
-    <div class="content">
-      <div class="description">
-         <p>Some useful tips for Yaml file processing, parameter passing and Image preloading in Play apps.</p>
-      </div>
-    </div>
-  </div>
-
-
-      <div class="ui card">
-    <div class="content">
-        <div class="right floated meta"> <i class="film large icon"></i></div>
-        <div class="header"> Summer School </div>
-    </div>
-    <a href="http://wit-ictskills-2016.github.io/web-development/topic12/talk-2/summerschool.pdf">
-      <img class="ui bordered rounded image" src="http://wit-ictskills-2016.github.io/web-development/topic12/talk-2/summerschool.jpeg">
-    </a>
-    <div class="content">
-      <div class="description">
-         <p>A review of the summer school arrangements</p>
-      </div>
-    </div>
-  </div>
-
-
-      <div class="ui card">
-    <div class="content">
-        <div class="right floated meta"> <i class="lab large icon"></i></div>
-        <div class="header"> Lab-12 </div>
-    </div>
-    <a href="http://wit-ictskills-2016.github.io/web-development/topic12/book-c/index.html">
-      <img class="ui bordered rounded image" src="http://wit-ictskills-2016.github.io/web-development/topic12/book-c/img/main.png">
-    </a>
-    <div class="content">
-      <div class="description">
-         <p>Deploy the Spacebook app to Heroku. This will require a heroku account + a locally installed git tool set.</p>
-      </div>
-    </div>
-  </div>
-
-
-  </div>
+     # block content
+     # endblock
     </div>
 
   </body>

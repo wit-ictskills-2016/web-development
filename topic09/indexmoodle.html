@@ -8,115 +8,15 @@
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js"></script>
     <style>
-
-
-body 
-{
-  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
-}
-
-figcaption
-{
-  margin-bottom: 20px;
-}
-
-.vertical-align
-{
-  display: flex;
-  align-items: center;
-}
-
-.credits
-{
-  min-height:20px;
-}
+      # include "css/main.css"
     </style>
     <base target="_blank" />
   </head>
   <body>
+    # from  "partials/card.html" import card  as card
     <div class="ui raised segment">
-<div class="ui four doubling stackable cards">
-      <div class="ui card">
-    <div class="content">
-        <div class="right floated meta"> <i class="film large icon"></i></div>
-        <div class="header"> Review Forms </div>
-    </div>
-    <a href="http://wit-ictskills-2016.github.io/web-development/topic09/talk-1/a-review-forms.pdf">
-      <img class="ui bordered rounded image" src="http://wit-ictskills-2016.github.io/web-development/topic09/talk-1/a-review-forms.png">
-    </a>
-    <div class="content">
-      <div class="description">
-         <p>Another look at the forms concept. Forms are the central mechanism for acquiring information from a user - enabling simple strings and numbers to be entered into a page and 'submitted' to an application.</p>
-      </div>
-    </div>
-  </div>
-
-
-      <div class="ui card">
-    <div class="content">
-        <div class="right floated meta"> <i class="film large icon"></i></div>
-        <div class="header"> Models & Databases </div>
-    </div>
-    <a href="http://wit-ictskills-2016.github.io/web-development/topic09/talk-2/b-models_and_databases.pdf">
-      <img class="ui bordered rounded image" src="http://wit-ictskills-2016.github.io/web-development/topic09/talk-2/b-models_and_databases.png">
-    </a>
-    <div class="content">
-      <div class="description">
-         <p>A database is where we store information between requests. The model classes we introduce are saved here and we can subsequently query and update any objects we insert. </p>
-      </div>
-    </div>
-  </div>
-
-
-      <div class="ui card">
-    <div class="content">
-        <div class="right floated meta"> <i class="film large icon"></i></div>
-        <div class="header"> Sessions </div>
-    </div>
-    <a href="http://wit-ictskills-2016.github.io/web-development/topic09/talk-3/c-sessions.pdf">
-      <img class="ui bordered rounded image" src="http://wit-ictskills-2016.github.io/web-development/topic09/talk-3/c-sessions.png">
-    </a>
-    <div class="content">
-      <div class="description">
-         <p>Keeping track of the currently logged in user is a challenge - as HTTP is, by definition 'stateless'. Hidden form fields, url rewriting and cookies are three common techniques for implementing sessions.</p>
-      </div>
-    </div>
-  </div>
-
-
-      <div class="ui card">
-    <div class="content">
-        <div class="right floated meta"> <i class="film large icon"></i></div>
-        <div class="header"> Sessions in Play </div>
-    </div>
-    <a href="http://wit-ictskills-2016.github.io/web-development/topic09/talk-4/c-sessions-in-play.pdf">
-      <img class="ui bordered rounded image" src="http://wit-ictskills-2016.github.io/web-development/topic09/talk-4/c-sessions-in-play.png">
-    </a>
-    <div class="content">
-      <div class="description">
-         <p>In Play we have a simple and convenient session mechanism, which can conveniently remember information about the currently logged in user.</p>
-      </div>
-    </div>
-  </div>
-
-
-      <div class="ui card">
-    <div class="content">
-        <div class="right floated meta"> <i class="lab large icon"></i></div>
-        <div class="header"> Lab-09 </div>
-    </div>
-    <a href="http://wit-ictskills-2016.github.io/web-development/topic09/book-a/index.html">
-      <img class="ui bordered rounded image" src="http://wit-ictskills-2016.github.io/web-development/topic09/book-a/img/main.jpg">
-    </a>
-    <div class="content">
-      <div class="description">
-         <p>Introduce a 'Session' object to keep track of the currently logged in user. Use this Session object to be able to display the name of the logged in user on each page. Explore how this session can be used to further customise other aspects of the views</p>
-      </div>
-    </div>
-  </div>
-
-
-  </div>
+     # block content
+     # endblock
     </div>
 
   </body>
