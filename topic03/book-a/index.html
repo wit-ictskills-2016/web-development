@@ -95,7 +95,7 @@ h3
   <header class="header item">
     <a href="../index.html">
       <i class="sitemap icon"></i>
-      
+      Box Model
     </a>
   </header>
   <div class="right tab-menu menu">
@@ -147,13 +147,13 @@ h3
 
   
   <div  class="ui tab segment lab" data-tab="Lab-03a">
-    <h1 id="css-design">CSS Design</h1>
+    <h1>CSS Design</h1>
 <p>In this lab we will work towards developing a site with a more ambitious use of CSS. In particular, tbe box model will be used to achieve a more professional user experience.</p>
 
   </div>
  
   <div  class="ui tab segment lab" data-tab="01">
-    <h1 id="setup">Setup</h1>
+    <h1>Setup</h1>
 <p>This week we wil start a new project, but we will NOT copy over any material from last week - but rather start with a blank slate.</p>
 <p>Open Sublime text editor - and open the <code>directory</code> containing your web development projects (this folder is called <code>web-prj</code> below):</p>
 <p><img src="img/00.png" alt=""></p>
@@ -183,14 +183,12 @@ h3
   &lt;/head&gt;
   &lt;body&gt;
   &lt;/body&gt;
-&lt;/html&gt;
-</code></pre><p>Create a file called &#39;index.html&#39; in the following locations:</p>
-<p>lab03</p>
-<ul>
-<li>index.html</li>
-<li>about/index.html</li>
-<li>deals/index.html</li>
-</ul>
+&lt;/html&gt;</code></pre>
+<p>Create a file called &#39;index.html&#39; in the following locations:</p>
+<p>lab03
+ - index.html
+ - about/index.html
+ - deals/index.html</p>
 <p>Should see something like this:</p>
 <p><img src="img/05.png" alt=""></p>
 <p>You can see all the files are open in tabs across the top.</p>
@@ -201,8 +199,8 @@ h3
   </div>
  
   <div  class="ui tab segment lab" data-tab="02">
-    <h1 id="main-page">Main page</h1>
-<h2 id="lab03-index-html">lab03/index.html</h2>
+    <h1>Main page</h1>
+<h2>lab03/index.html</h2>
 <p>Open the main index.html page and replace the template contents with the following:</p>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -266,8 +264,8 @@ h3
       the property of their respective owners.
     &lt;/p&gt;
   &lt;/body&gt;
-&lt;/html&gt;
-</code></pre><p>... and open this same file in the browser:</p>
+&lt;/html&gt;</code></pre>
+<p>... and open this same file in the browser:</p>
 <p><img src="img/07.png" alt=""></p>
 <p>Check the &#39;Directions&#39; link and make sure it works. Introduce the following content for the file <code>about/index.html</code>:</p>
 <pre><code>&lt;!DOCTYPE html&gt;
@@ -289,8 +287,8 @@ h3
       &lt;a href=&quot;../index.html&quot;&gt;Back to the Store&lt;/a&gt;
     &lt;/p&gt;
   &lt;/body&gt;
-&lt;/html&gt;
-</code></pre><p>Any change you make in the sublime will only appear in the browser if you:</p>
+&lt;/html&gt;</code></pre>
+<p>Any change you make in the sublime will only appear in the browser if you:</p>
 <ul>
 <li>save the changes in sublime</li>
 <li>refresh the page in chrome.</li>
@@ -307,14 +305,14 @@ h3
   </div>
  
   <div  class="ui tab segment lab" data-tab="03">
-    <h1 id="style-sheet">Style Sheet</h1>
+    <h1>Style Sheet</h1>
 <p>Our first step will be to include a style sheet. Create a file called &#39;store.css&#39; and include the following:</p>
 <pre><code>body {
   font: small/1.6em Verdana, Helvetica, Arial, sans-serif;
 }
 
 h1, h2 {
-  color: # 007e7e;
+  color: #007e7e;
 }
 
 h1 {
@@ -323,21 +321,21 @@ h1 {
 
 h2 {
   font-size:130%;
-}
-</code></pre><p>Now edit the main index.html file, and link the stylesheet by inserting this into the <code>&lt;head&gt;</code> element:</p>
-<pre><code>    &lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;store.css&quot; media=&quot;screen&quot; /&gt;
-</code></pre><p>Make sure you save everything, and then refresh chrome. It should render a new style - something like this:</p>
+}</code></pre>
+<p>Now edit the main index.html file, and link the stylesheet by inserting this into the <code>&lt;head&gt;</code> element:</p>
+<pre><code>    &lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;store.css&quot; media=&quot;screen&quot; /&gt;</code></pre>
+<p>Make sure you save everything, and then refresh chrome. It should render a new style - something like this:</p>
 <p><img src="img/11.png" alt=""></p>
 <p>Do you notice that the directions page still seems to use the default fonts? This is because it is not linked to the stylesheet. Incorporate this now by this entry in the <code>&lt;head&gt;</code> element:</p>
-<pre><code>    &lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;../store.css&quot; media=&quot;screen&quot; /&gt;
-</code></pre><p>Verify that it now renders as expected:</p>
+<pre><code>    &lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;../store.css&quot; media=&quot;screen&quot; /&gt;</code></pre>
+<p>Verify that it now renders as expected:</p>
 <p><img src="img/12.png" alt=""></p>
 <p>Note carefully how the link slightly different to the previous one. Why is that?</p>
 
   </div>
  
   <div  class="ui tab segment lab" data-tab="04">
-    <h1 id="additional-content">Additional Content</h1>
+    <h1>Additional Content</h1>
 <p>Here is some additional content for the main index.page:</p>
 <pre><code>    &lt;h2&gt;Weekly Specials&lt;/h2&gt;
     &lt;hr&gt;
@@ -375,8 +373,8 @@ h2 {
 
     &lt;p&gt;
        See some other great deals &lt;a href=&quot;deals/index.html&quot; title=&quot;Deals&quot;&gt;here&lt;/a&gt;.
-    &lt;/p&gt;
-</code></pre><p>Place this content directly into the page, just before the closing <code>&lt;/body&gt;</code> tag. It should look like this:</p>
+    &lt;/p&gt;</code></pre>
+<p>Place this content directly into the page, just before the closing <code>&lt;/body&gt;</code> tag. It should look like this:</p>
 <p><img src="img/13.png" alt=""></p>
 <p>Note that the images we have set up don&#39;t seem to work - and are represented in chrome as broken image links.</p>
 <p>We can fix this now. Here is a zipped archive of all the images we will need:</p>
@@ -415,8 +413,8 @@ h2 {
       &lt;a href=&quot;../index.html&quot;&gt;Back to the Store&lt;/a&gt;
     &lt;/p&gt;
   &lt;/body&gt;
-&lt;/html&gt;
-</code></pre><p>This should render correctly first time, as we have the images already in place:</p>
+&lt;/html&gt;</code></pre>
+<p>This should render correctly first time, as we have the images already in place:</p>
 <p><img src="img/15.png" alt=""></p>
 <p>Look carefully at the paths to the images in the html source.</p>
 <p>Make sure you can navigate to all three pages now:</p>
@@ -430,7 +428,7 @@ h2 {
   </div>
  
   <div  class="ui tab segment lab" data-tab="05">
-    <h1 id="guarantee-paragraph">Guarantee Paragraph</h1>
+    <h1>Guarantee Paragraph</h1>
 <p>Locate the &#39;guarantee&#39; paragraph in the home page (the third paragraph):</p>
 <pre><code class="lang-html">    &lt;p&gt;
       Our guarantee: at the store, we&#39;re committed to 
@@ -439,8 +437,7 @@ h2 {
       and inter-interoperability. If you are unhappy with any individual app 
       in a bundle we will refund you the full amount for the complete 
       suite, no questions asked.
-    &lt;/p&gt;
-</code></pre>
+    &lt;/p&gt;</code></pre>
 <p>(begins around line 19)</p>
 <p>We would like to target this specific paragraph with some custom styles. To this end, we nominate it to a &#39;class&#39; called &#39;guarantee&#39;:</p>
 <pre><code class="lang-html">  &lt;p class=&quot;guarantee&quot;&gt;
@@ -450,17 +447,15 @@ h2 {
       and inter-interoperability. If you are unhappy with any individual app 
       in a bundle we will refund you the full amount for the complete 
       suite, no questions asked.
-  &lt;/p&gt;
-</code></pre>
+  &lt;/p&gt;</code></pre>
 <p>In our stylesheet, we can devise a rule just for this paragraph:</p>
 <pre><code class="lang-css">.guarantee
 {
   border-color: black;
   border-width: 1px;
   border-style: solid;
-  background-color: # a7cece;
-}
-</code></pre>
+  background-color: #a7cece;
+}</code></pre>
 <p>Reload and review how the paragraph looks:</p>
 <p><img src="./img/16.png" alt=""></p>
 <p>We can see evidence of our targeted styles.</p>
@@ -469,29 +464,25 @@ h2 {
 {
   /* as before */
   margin: 30px;
-}
-</code></pre>
+}</code></pre>
 <p>Note that <code>/* as before */</code> above means leave the existing properties in place and just add the <code>margin</code> to the end of the <code>&#39;guarantee</code> rule.</p>
 <p>Reload the page:</p>
 <p><img src="./img/17.png" alt=""></p>
 <p>Next, the background image. Save this image here to your images folder:</p>
 <p><img src="./img/background.gif" alt=""></p>
 <p>...and we can extend the <code>guaranteee</code> rule with this property here:</p>
-<pre><code class="lang-css">  background-image: url(images/background.gif) ;
-</code></pre>
+<pre><code class="lang-css">  background-image: url(images/background.gif) ;</code></pre>
 <p>This seems to yield a repeated pattern:</p>
 <p><img src="./img/18.png" alt=""></p>
 <p>Some further refinements to the same rule can put a single image in the top right:</p>
 <pre><code class="lang-css">  background-repeat: no-repeat;
-  background-position: top-left;
-</code></pre>
+  background-position: top-left;</code></pre>
 <p>Reloading again:</p>
 <p><img src="./img/19.png" alt=""></p>
 <p>And we can also further refine the padding:</p>
 <pre><code class="lang-css">  padding: 25px;
   padding-left: 80px;
-  margin-right: 150px;
-</code></pre>
+  margin-right: 150px;</code></pre>
 <p>Looks like this:</p>
 <p><img src="./img/20.png" alt=""></p>
 <p>Our full rule for guarantee now looks like this:</p>
@@ -500,7 +491,7 @@ h2 {
   border-color: black;
   border-width: 1px;
   border-style: solid;
-  background-color: # a7cece;
+  background-color: #a7cece;
 
   margin: 30px;
   padding: 25px;
@@ -511,20 +502,17 @@ h2 {
 
   background-repeat: no-repeat;
   background-position: top-left;
-}
-</code></pre>
+}</code></pre>
 <p>Some further adjustments to the text itself:</p>
 <pre><code class="lang-css">  line-height: 1.9em;
   font-style: italic;
   font-family: Georgia, &quot;Times New Roman&quot;, Times, serif;
-  color: black;
-</code></pre>
+  color: black;</code></pre>
 <p><img src="./img/21.png" alt=""></p>
 <p>Finally, we might adjust the border pattern:</p>
 <pre><code class="lang-css">  border-color: white;
   border-width: 1px;
-  border-style: dashed;
-</code></pre>
+  border-style: dashed;</code></pre>
 <p>Which turns out as:</p>
 <p><img src="./img/22.png" alt=""></p>
 <p>Regrouping the properties, this is the complete rule:</p>
@@ -539,7 +527,7 @@ h2 {
   padding-left: 80px;
   margin-right: 150px;
 
-  background-color: # a7cece;
+  background-color: #a7cece;
   background-image: url(./images/background.gif);
   background-repeat: no-repeat;
   background-position: top-left;
@@ -548,13 +536,12 @@ h2 {
   font-style: italic;
   font-family: Georgia, &quot;Times New Roman&quot;, Times, serif;
   color: black;
-}
-</code></pre>
+}</code></pre>
 
   </div>
  
   <div  class="ui tab segment lab" data-tab="06">
-    <h1 id="folding-view-in-sublime">Folding View in Sublime</h1>
+    <h1>Folding View in Sublime</h1>
 <p>Your editor may look like this currently:</p>
 <p><img src="img/23.png" alt=""></p>
 <p>Now select the following menu option - <code>Edit-&gt;Code Folding-&gt;Fold All</code>:</p>
@@ -571,16 +558,16 @@ h2 {
   </div>
  
   <div  class="ui tab segment lab" data-tab="07">
-    <h1 id="sidebar">Sidebar</h1>
+    <h1>Sidebar</h1>
 <p>Open the main index.html and locate the <code>Weekly Specials</code> heading. Place a new <code>&lt;div&gt;</code> element immediately before this element:</p>
 <pre><code>    &lt;div id=&quot;weeklyspecials&quot;&gt;
-    &lt;h2&gt;Weekly Specials&lt;/h2&gt;
-</code></pre><p>we must now close the <code>&lt;div&gt;</code> a little later in the file, just after this  paragraph: </p>
+    &lt;h2&gt;Weekly Specials&lt;/h2&gt;</code></pre>
+<p>we must now close the <code>&lt;div&gt;</code> a little later in the file, just after this  paragraph: </p>
 <pre><code>    &lt;p&gt;
       See some other great deals &lt;a href=&quot;deals/index.html&quot; title=&quot;Deals&quot;&gt;here&lt;/a&gt;.
     &lt;/p&gt;
-    &lt;/div&gt;
-</code></pre><p>If you &quot;indent&quot; everything inside the <code>&lt;div&gt;</code> - i.e. push all of the enclosed element in by 2 spaces - then the folding editor will allow you to &#39;fold&#39; the entire division:</p>
+    &lt;/div&gt;</code></pre>
+<p>If you &quot;indent&quot; everything inside the <code>&lt;div&gt;</code> - i.e. push all of the enclosed element in by 2 spaces - then the folding editor will allow you to &#39;fold&#39; the entire division:</p>
 <p><img src="img/30.png" alt=""></p>
 <p>I.e. - it is hiding temporarily the enclose elements. This can be difficult to get exactly right - as the folding requires the indentation being precisely correct. Here is the correctly indented section if you are having trouble:</p>
 <pre><code>    &lt;div id=&quot;weeklyspecials&quot;&gt;
@@ -621,8 +608,8 @@ h2 {
       &lt;p&gt;
          See some other great deals &lt;a href=&quot;deals/index.html&quot; title=&quot;Deals&quot;&gt;here&lt;/a&gt;.
       &lt;/p&gt;
-    &lt;/div&gt;
-</code></pre><p>We can now also enclose th first half of the page in another <code>&lt;div&gt;</code> with the id &quot;maincontent&quot;:</p>
+    &lt;/div&gt;</code></pre>
+<p>We can now also enclose th first half of the page in another <code>&lt;div&gt;</code> with the id &quot;maincontent&quot;:</p>
 <pre><code>   &lt;div id=&quot;maincontent&quot;&gt;
       &lt;h1&gt;Welcome to the App Bundle Store&lt;/h1&gt;
       &lt;p&gt;
@@ -678,8 +665,8 @@ h2 {
         All trademarks and registered trademarks appearing on this site are 
         the property of their respective owners.
       &lt;/p&gt;
-    &lt;/div&gt;
-</code></pre><p>If this goes correctly, we can &#39;fold&#39; sublime to view the entire page structure more easily:</p>
+    &lt;/div&gt;</code></pre>
+<p>If this goes correctly, we can &#39;fold&#39; sublime to view the entire page structure more easily:</p>
 <p><img src="img/31.png" alt=""></p>
 <p>This allows us to keep an eye on the complete page in a single glance - very useful of the page is long or incorporates a very specific structure you need to manage.</p>
 <p>Here is the complete main index.html page if you are struggling with the indentation:</p>
@@ -789,18 +776,18 @@ h2 {
     &lt;/div&gt;
 
   &lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
+&lt;/html&gt;</code></pre>
+
   </div>
  
   <div  class="ui tab segment lab" data-tab="08">
-    <h1 id="floating-sections">Floating Sections</h1>
+    <h1>Floating Sections</h1>
 <p>The <code>&lt;div&gt;s</code> we have introduced have had no effect on the visual appearance of the main page - it should still look exactly as it did before we incorporated them:</p>
 <p>We can now target this division directly with the following new rules in CSS:</p>
-<pre><code class="lang-css"># weeklyspecials {
+<pre><code class="lang-css">#weeklyspecials {
   border-width: thin;
   border-style: solid;
-  border-color: # 007e7e;
+  border-color: #007e7e;
 
   width: 25%;
   padding: 0px 20px 30px 10px
@@ -811,11 +798,10 @@ h2 {
   float:right;
 }
 
-# maincontent {
+#maincontent {
   float:left;
   width:70%;
-}
-</code></pre>
+}</code></pre>
 <p>Copy/paste this into your css file and refresh the page:</p>
 <p><img src="img/32.png" alt=""></p>
 <p>This is the final version of our store.css:</p>
@@ -824,7 +810,7 @@ h2 {
 }
 
 h1, h2 {
-  color: # 007e7e;
+  color: #007e7e;
 }
 
 h1 {
@@ -845,7 +831,7 @@ h2 {
   padding-left: 80px;
   margin-right: 150px;
 
-  background-color: # a7cece;
+  background-color: #a7cece;
   background-image: url(./images/background.gif);
   background-repeat: no-repeat;
   background-position: top-left;
@@ -856,10 +842,10 @@ h2 {
   color: black;
 }
 
-# weeklyspecials {
+#weeklyspecials {
   border-width: thin;
   border-style: solid;
-  border-color: # 007e7e;
+  border-color: #007e7e;
 
   width: 25%;
   padding: 0px 20px 30px 10px
@@ -870,25 +856,25 @@ h2 {
   float:right;
 }
 
-# maincontent {
+#maincontent {
   float:left;
   width:70%;
-}
-</code></pre>
+}</code></pre>
+
   </div>
  
   <div  class="ui tab segment lab" data-tab="Exercises">
-    <h1 id="exercise">Exercise</h1>
+    <h1>Exercise</h1>
 <p>This is the final version of the project:</p>
 <ul>
 <li><a href="archives/lab03.zip">lab03</a></li>
 </ul>
-<h1 id="exercise-1-">Exercise 1:</h1>
+<h1>Exercise 1:</h1>
 <p>Look again at these CSS rules:</p>
-<pre><code># weeklyspecials {
+<pre><code>#weeklyspecials {
   border-width: thin;
   border-style: solid;
-  border-color: # 007e7e;
+  border-color: #007e7e;
 
   width: 25%;
   padding: 0px 20px 30px 10px
@@ -899,12 +885,12 @@ h2 {
   float:right;
 }
 
-# maincontent {
+#maincontent {
   float:left;
   width:70%;
-}
-</code></pre><p>Experiment with the various dimensions you can see here. Specifically, the &#39;width&#39; and &#39;padding&#39; dimensions. Remember you have to save the changes and refresh the page to see the effect.</p>
-<h1 id="exercise-2-">Exercise 2:</h1>
+}</code></pre>
+<p>Experiment with the various dimensions you can see here. Specifically, the &#39;width&#39; and &#39;padding&#39; dimensions. Remember you have to save the changes and refresh the page to see the effect.</p>
+<h1>Exercise 2:</h1>
 <p>Continue to experiment with the parameters, this time exploring alternatives to the &#39;border-style&#39;, &#39;border-width&#39; and &#39;border-color&#39; properties. See if you can make sense of some of the documentation here:</p>
 <ul>
 <li><a href="https://developer.mozilla.org/en/docs/Web/CSS/border">https://developer.mozilla.org/en/docs/Web/CSS/border</a></li>

@@ -95,7 +95,7 @@ h3
   <header class="header item">
     <a href="../index.html">
       <i class="sitemap icon"></i>
-      
+      Sessions
     </a>
   </header>
   <div class="right tab-menu menu">
@@ -139,15 +139,15 @@ h3
 
   
   <div  class="ui tab segment lab" data-tab="Lab-09">
-    <h1 id="objectives">Objectives</h1>
+    <h1>Objectives</h1>
 <p>Introduce a &#39;Session&#39; object to keep track of the currently logged in user. Use this Session object to be able to display the name of the logged in user on each page. Explore how this session can be used to further customise other aspects of the views</p>
 
   </div>
  
   <div  class="ui tab segment lab" data-tab="01">
-    <h1 id="exercise-solutions">Exercise Solutions</h1>
+    <h1>Exercise Solutions</h1>
 <p>These are solutions to last weeks exercises:</p>
-<h2 id="exercise-1-">Exercise 1:</h2>
+<h2>Exercise 1:</h2>
 <p>We need to go back to our login form, which currently looks like this (excluding the header for clarity):</p>
 <pre><code class="lang-html">&lt;section class=&quot;ui form segment&quot;&gt;
   &lt;form action=&quot;/authenticate&quot; method=&quot;POST&quot;&gt;
@@ -161,51 +161,46 @@ h3
     &lt;/div&gt;
     &lt;button class=&quot;ui blue submit button&quot;&gt;Login&lt;/button&gt;
   &lt;/form&gt;
-&lt;/section&gt;
-</code></pre>
+&lt;/section&gt;</code></pre>
 <p>Using step 5 as a guide, introduce the necessary changes to have the email/password transferred from this form to the controller, and logged to the console.</p>
-<h2 id="exercise-1-solution">Exercise 1:Solution</h2>
+<h2>Exercise 1:Solution</h2>
 <p>Change the authenticate method in Accounts class as follows:</p>
 <pre><code class="lang-java">  public static void authenticate(String email, String password)
   {
     Logger.info(&quot;Attempting to authenticate with &quot; + email + &quot;:&quot; + password);
     Home.index();
-  }
-</code></pre>
+  }</code></pre>
 <p>Run the application, and veify that the logs display the message above.</p>
-<h2 id="exercise-2-">Exercise 2:</h2>
+<h2>Exercise 2:</h2>
 <p>What happens when you enter text and press &#39;Change&#39; on the profile page? (Not found presumably). This is the html for that part of the page:</p>
 <pre><code class="lang-html">        &lt;form action=&quot;homeprofile/changetext&quot; method=&quot;post&quot;&gt;
           &lt;h3 class=&quot;ui inverted teal block header&quot;&gt;Enter Status&lt;/h3&gt;
           &lt;textarea class=&quot;ui field&quot; name=&quot;profiletext&quot;&gt; &lt;/textarea&gt;
           &lt;input class=&quot;ui blue button&quot; type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;Change&quot; /&gt;
-        &lt;/form&gt;
-</code></pre>
+        &lt;/form&gt;</code></pre>
 <p>Again using step 5 of this lab as a guide, can you make the necessary changes such that when the Change button is pressed, a log message is printed on the console?</p>
 <p>Remember, to implement complete this exercises you will need to write both a java method and a matching route - as demonstrated in step 5. Also. the &#39;action&#39; attribute of the form above will need to be completed. Also, note the name on the <code>&lt;textarea&gt;</code> field.</p>
-<h2 id="exercise-2-solution">Exercise 2:Solution</h2>
+<h2>Exercise 2:Solution</h2>
 <p>First we correct the &#39;action&#39; in the view, to use a more consistent pattern &#39;/profile/changestatus&quot;&#39;:</p>
 <pre><code class="lang-html">        &lt;form action=&quot;/profile/changestatus&quot; method=&quot;post&quot;&gt;
           &lt;h3 class=&quot;ui inverted teal block header&quot;&gt;Enter Status&lt;/h3&gt;
           &lt;textarea class=&quot;ui field&quot; name=&quot;profiletext&quot;&gt; &lt;/textarea&gt;
           &lt;input class=&quot;ui blue button&quot; type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;Change&quot; /&gt;
-        &lt;/form&gt;
-</code></pre>
+        &lt;/form&gt;</code></pre>
 <p>Then we create a new entry in the routes file to specifically support this route:</p>
-<pre><code>POST    /profile/changestatus                   Profile.changeStatus
-</code></pre><p>Finally introduce this new method into the Profile controller:</p>
+<pre><code>POST    /profile/changestatus                   Profile.changeStatus</code></pre>
+<p>Finally introduce this new method into the Profile controller:</p>
 <pre><code class="lang-java">  public static void changeStatus(String profiletext)
   {
     Logger.info(&quot;Status changed to &quot; + profiletext);
     index();
-  }
-</code></pre>
+  }</code></pre>
 <p>Test this now.</p>
 
   </div>
  
   <div  class="ui tab segment lab" data-tab="02">
-    <h1 id="sessions">Sessions</h1>
+    <h1>Sessions</h1>
 <p>Now we can have users sign up, the next step is to have them log in, and for our app to know who is logged in at any given time.</p>
 <p>We will need to decide whether to allow a user to log in (they must register first), and subsequently &#39;remember&#39; which user has logged in. This is accomplished as follows</p>
 <ul>
@@ -230,8 +225,7 @@ h3
       Logger.info(&quot;Authentication failed&quot;);
       login();  
     }
-  }
-</code></pre>
+  }</code></pre>
 <p>Read this code carefully - notice we have two new methods we are calling on the user object:</p>
 <ul>
 <li>findByEmail() - which will look up a table of users and see if there is a match</li>
@@ -246,21 +240,18 @@ h3
   public boolean checkPassword(String password)
   {
     return this.password.equals(password);
-  }
-</code></pre>
+  }</code></pre>
 <p>Try this out now. If an unregistered email/password is entered then the login screen is displayed again. If valid credentials are provided, then we will get the home screen. Also check the console for the appropriate log messages.</p>
 
   </div>
  
   <div  class="ui tab segment lab" data-tab="03">
-    <h1 id="home-page-heading">Home Page Heading</h1>
+    <h1>Home Page Heading</h1>
 <p>Once a user is successfully logged in, we would like to display the user name in the title of some of the pages. Currently this is hard coded on some pages to &quot;Homer Simpson&quot; - views/index.html for instance:</p>
-<pre><code class="lang-html">  &lt;h2 class=&quot;ui header&quot;&gt;SpaceBook: Homer&#39;s Home Page&lt;/h2&gt;
-</code></pre>
+<pre><code class="lang-html">  &lt;h2 class=&quot;ui header&quot;&gt;SpaceBook: Homer&#39;s Home Page&lt;/h2&gt;</code></pre>
 <p>We would like to have the name of the user passed on to the view so we can display it.</p>
 <p>In Accounts.authenticate(), we put the currently logged in user id in the &#39;session&#39;:</p>
-<pre><code class="lang-java">      session.put(&quot;logged_in_userid&quot;, user.id);
-</code></pre>
+<pre><code class="lang-java">      session.put(&quot;logged_in_userid&quot;, user.id);</code></pre>
 <p>We can retrieve it now in the home.index method, and use the id to look up the user in the database. Once we have the user object, we retrieve the users name and pass this to the view.  Rewrite the Home.index function as follows:</p>
 <pre><code class="lang-java">  public static void index()
   {
@@ -268,20 +259,17 @@ h3
     User user = User.findById(Long.parseLong(userId));
     String name = user.firstName;
     render(name);
-  }
-</code></pre>
+  }</code></pre>
 <p>Read each line carefully - introduce it into your Home class. Now we can replace the hard coded:</p>
-<pre><code class="lang-html">&lt;h2 class=&quot;ui header&quot;&gt;SpaceBook: Homer&#39;s Home Page&lt;/h2&gt;
-</code></pre>
+<pre><code class="lang-html">&lt;h2 class=&quot;ui header&quot;&gt;SpaceBook: Homer&#39;s Home Page&lt;/h2&gt;</code></pre>
 <p>with this:</p>
-<pre><code class="lang-html">  &lt;h2 class=&quot;ui header&quot;&gt;SpaceBook: ${name}&#39;s Home Page&lt;/h2&gt;
-</code></pre>
+<pre><code class="lang-html">  &lt;h2 class=&quot;ui header&quot;&gt;SpaceBook: ${name}&#39;s Home Page&lt;/h2&gt;</code></pre>
 <p>Try this now. Sign up Homer, and verify that his name appears. Then sign up Marge her name should be on the home page instead.</p>
 
   </div>
  
   <div  class="ui tab segment lab" data-tab="04">
-    <h1 id="profile-page-heading">Profile Page Heading</h1>
+    <h1>Profile Page Heading</h1>
 <p>We can do a similar exercise for the home profile page. This is how it is &#39;rendered&#39;:</p>
 <pre><code class="lang-java">public class Profile extends Controller
 {
@@ -289,8 +277,7 @@ h3
   {
     render();
   }
-}
-</code></pre>
+}</code></pre>
 <p>We can incorporate the same code we used in the home class to get the currently logged in user name to the view:</p>
 <pre><code class="lang-java">  public static void index()
   {
@@ -298,21 +285,18 @@ h3
     User user = User.findById(Long.parseLong(userId));
     String name = user.firstName;
     render(name);
-  }
-</code></pre>
+  }</code></pre>
 <p>...and also change &#39;views/Profile/index.html&#39; from this:</p>
-<pre><code class="lang-html">  &lt;h2 class=&quot;ui header&quot;&gt;Homer&#39;s Profile&lt;/h2&gt;
-</code></pre>
+<pre><code class="lang-html">  &lt;h2 class=&quot;ui header&quot;&gt;Homer&#39;s Profile&lt;/h2&gt;</code></pre>
 <p>to</p>
-<pre><code class="lang-html">  &lt;h2 class=&quot;ui header&quot;&gt;${name}&#39;s Profile&lt;/h2&gt;
-</code></pre>
+<pre><code class="lang-html">  &lt;h2 class=&quot;ui header&quot;&gt;${name}&#39;s Profile&lt;/h2&gt;</code></pre>
 <p>Save and reload the home profile page. The users name should appear.</p>
 <p>Log out now and login as a different user (you may need to register a new one). Verify that the new user&#39;s name appears as expected in the titles of home and home profile views.</p>
 
   </div>
  
   <div  class="ui tab segment lab" data-tab="05">
-    <h1 id="passing-objects-to-views">Passing Objects to Views</h1>
+    <h1>Passing Objects to Views</h1>
 <p>In the Home controller we have action methods like this:</p>
 <pre><code class="lang-java">  public static void index()
   {
@@ -320,61 +304,56 @@ h3
     User user = User.findById(Long.parseLong(userId));
     String name = user.firstName;
     render(name);
-  }
-</code></pre>
+  }</code></pre>
 <p>and in the corresponding view/Home/index.html we have something this:</p>
-<pre><code class="lang-html">  &lt;h2 class=&quot;ui header&quot;&gt;SpaceBook: ${name}&#39;s Home Page&lt;/h2&gt;
-</code></pre>
+<pre><code class="lang-html">  &lt;h2 class=&quot;ui header&quot;&gt;SpaceBook: ${name}&#39;s Home Page&lt;/h2&gt;</code></pre>
 <p>i.e. we are passing individual strings to the views. This can be significantly enhanced by passing entire objects to the view:</p>
 <pre><code class="lang-java">  public static void index()
   {
     String userId = session.get(&quot;logged_in_userid&quot;);
     User user = User.findById(Long.parseLong(userId));
     render(user);
-  }
-</code></pre>
+  }</code></pre>
 <p>and</p>
-<pre><code class="lang-html">  &lt;h2 class=&quot;ui header&quot;&gt;SpaceBook: Home page for ${user.firstName} ${user.lastName}&lt;/h2&gt;
-</code></pre>
+<pre><code class="lang-html">  &lt;h2 class=&quot;ui header&quot;&gt;SpaceBook: Home page for ${user.firstName} ${user.lastName}&lt;/h2&gt;</code></pre>
 <p>This, of course, means that other properties of the user object are also available if we need them.</p>
 <p>You may need to restart the app - and register a new user - after making the above changes.</p>
 
   </div>
  
   <div  class="ui tab segment lab" data-tab="06">
-    <h1 id="logout">Logout</h1>
+    <h1>Logout</h1>
 <p>When the user logs out we no longer want to remember any details. We &#39;forget&#39; the user be clearing the session. </p>
 <p>Do this in the Accounts.logout method:</p>
 <pre><code class="lang-java">  public static void logout()
   {
     session.clear();
     index();
-  }
-</code></pre>
+  }</code></pre>
 <p>Try this now. </p>
 
   </div>
  
   <div  class="ui tab segment lab" data-tab="Exercises">
-    <h1 id="exercises">Exercises</h1>
+    <h1>Exercises</h1>
 <ul>
 <li><a href="archives/spacebook-part-3.zip">spacebook-part-3.zip</a></li>
 </ul>
-<h2 id="exercise-1">Exercise 1</h2>
+<h2>Exercise 1</h2>
 <p>Change the Profile controller/view to display the currently logged in users full name (not just the first name).</p>
-<h2 id="exercise-2">Exercise 2</h2>
+<h2>Exercise 2</h2>
 <p>In the user Profile view, see if you can figure out how to let the user see his/her  email. </p>
-<h2 id="exercise-3">Exercise 3</h2>
+<h2>Exercise 3</h2>
 <p>Start the application from scratch.  Browse to the database administrator:</p>
 <ul>
-<li><a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#58;&#104;&#x74;&#x74;&#112;&#58;&#47;&#x2f;&#108;&#x6f;&#x63;&#x61;&#108;&#104;&#x6f;&#x73;&#x74;&#58;&#x39;&#48;&#x30;&#x30;&#x2f;&#x40;&#100;&#x62;">&#104;&#x74;&#x74;&#112;&#58;&#47;&#x2f;&#108;&#x6f;&#x63;&#x61;&#108;&#104;&#x6f;&#x73;&#x74;&#58;&#x39;&#48;&#x30;&#x30;&#x2f;&#x40;&#100;&#x62;</a></li>
+<li><a href="&#109;&#97;&#105;&#108;&#x74;&#111;&#58;&#x68;&#x74;&#116;&#112;&#x3a;&#x2f;&#47;&#108;&#x6f;&#99;&#97;&#x6c;&#x68;&#x6f;&#115;&#116;&#58;&#x39;&#48;&#x30;&#x30;&#47;&#x40;&#100;&#98;">&#x68;&#x74;&#116;&#112;&#x3a;&#x2f;&#47;&#108;&#x6f;&#99;&#97;&#x6c;&#x68;&#x6f;&#115;&#116;&#58;&#x39;&#48;&#x30;&#x30;&#47;&#x40;&#100;&#98;</a></li>
 </ul>
 <p>Use this user interface to create some users. Then see if you can log in with these users using the regular interface:</p>
 <ul>
 <li><a href="http://localhost:9000">http://localhost:9000</a></li>
 </ul>
 <p>Use the MySqlWorkbench to do the same.</p>
-<h2 id="exercise-4">Exercise 4</h2>
+<h2>Exercise 4</h2>
 <p>Currently, every time we stop the application our database is cleared - and when we run again we have to register new users again. This can get tiresome and repetitive. Our framework comes with a simple mechanism for pre-loading our database if we want to hit the ground running with initial test data.</p>
 <p>Create a file called &#39;data.yml&#39; in the conf directory in the project, and incorporate the following contents into it:</p>
 <pre><code>User(homer):
@@ -387,8 +366,8 @@ User(marge):
     firstName: Marge
     lastName: Simpson
     email: marge@simpson.com
-    password: secret
-</code></pre><p>Now create a new java class called &#39;Bootstrap&#39; - directly in the the &#39;app&#39; folder in your eclipse project. The class is to contain the following:</p>
+    password: secret</code></pre>
+<p>Now create a new java class called &#39;Bootstrap&#39; - directly in the the &#39;app&#39; folder in your eclipse project. The class is to contain the following:</p>
 <pre><code class="lang-java">import java.util.List;
 
 import play.*;
@@ -407,13 +386,12 @@ public class Bootstrap extends Job
       Fixtures.loadModels(&quot;data.yml&quot;);
     }
   }
-}
-</code></pre>
+}</code></pre>
 <p>This last step can be tricky - as you may get warnings from Eclipse saying it does not like classes in here (it prefers them in packages). If it works correctly, it will appear like this in your workspace:</p>
 <p><img src="img/01.png" alt=""></p>
 <p>Stop the application and start it again. Go directly to the database admin page</p>
 <ul>
-<li><a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#58;&#x68;&#x74;&#x74;&#x70;&#58;&#47;&#47;&#108;&#111;&#x63;&#97;&#x6c;&#104;&#x6f;&#x73;&#x74;&#x3a;&#x39;&#48;&#48;&#x30;&#x2f;&#x40;&#100;&#98;">&#x68;&#x74;&#x74;&#x70;&#58;&#47;&#47;&#108;&#111;&#x63;&#97;&#x6c;&#104;&#x6f;&#x73;&#x74;&#x3a;&#x39;&#48;&#48;&#x30;&#x2f;&#x40;&#100;&#98;</a></li>
+<li><a href="&#109;&#x61;&#x69;&#x6c;&#116;&#x6f;&#x3a;&#104;&#116;&#x74;&#x70;&#x3a;&#47;&#x2f;&#x6c;&#111;&#99;&#97;&#108;&#x68;&#x6f;&#x73;&#116;&#x3a;&#57;&#x30;&#48;&#48;&#47;&#x40;&#x64;&#x62;">&#104;&#116;&#x74;&#x70;&#x3a;&#47;&#x2f;&#x6c;&#111;&#99;&#97;&#108;&#x68;&#x6f;&#x73;&#116;&#x3a;&#57;&#x30;&#48;&#48;&#47;&#x40;&#x64;&#x62;</a></li>
 </ul>
 <p>...and see if the users we specified are there. See if you can log in without registering.</p>
 <p>Add a few more users and see if they appear as expected (you will have to stop and restart the application for this to take effect).</p>

@@ -95,7 +95,7 @@ h3
   <header class="header item">
     <a href="../index.html">
       <i class="sitemap icon"></i>
-      
+      Box Model
     </a>
   </header>
   <div class="right tab-menu menu">
@@ -147,13 +147,13 @@ h3
 
   
   <div  class="ui tab segment lab" data-tab="Lab-03b">
-    <h1 id="objectives">Objectives</h1>
+    <h1>Objectives</h1>
 <p>This weeks lab will give you more practical experience od the box model and specifically how to build a simple multi-column layout using the techniques we have explored in class. You should complete this lab before starting to consider your project in detail.</p>
 
   </div>
  
   <div  class="ui tab segment lab" data-tab="01">
-    <h1 id="setup">Setup</h1>
+    <h1>Setup</h1>
 <p>In Sublime create a new Lab04 folder. This time we will not be using any content from the previous labs.</p>
 <p>In this project create two files:</p>
 <ul>
@@ -221,15 +221,14 @@ h3
       orci in lectus. Ut ipsum. In hac habitasse platea dictumst.
     &lt;/p&gt;
   &lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
+&lt;/html&gt;</code></pre>
 <p>Reloading in the browser, it should look like this:</p>
 <p><img src="./img/00.png" alt=""></p>
 
   </div>
  
   <div  class="ui tab segment lab" data-tab="02">
-    <h1 id="div">Div</h1>
+    <h1>Div</h1>
 <p>We are now going to divide our content into a series of sections:</p>
 <ul>
 <li><p>header</p>
@@ -247,8 +246,7 @@ h3
       &lt;h1&gt;
         Lorem ipsum dolor sit
       &lt;/h1&gt;  
-    &lt;/div&gt;
-</code></pre>
+    &lt;/div&gt;</code></pre>
 <p>Be sure to preserve the indentation as shown</p>
 <p>Next &quot;maincontent&quot;</p>
 <pre><code class="lang-html">    &lt;div id=&quot;maincontent&quot;&gt;
@@ -285,8 +283,7 @@ h3
         sollicitudin, urna arcu fermentum felis, in rhoncus nunc neque vitae  
         libero.
       &lt;/p&gt;
-    &lt;/div&gt;
-</code></pre>
+    &lt;/div&gt;</code></pre>
 <p>Then &quot;navigation&quot;:</p>
 <pre><code class="lang-html">    &lt;div id=&quot;navigation&quot;&gt;  
       &lt;ul&gt;  
@@ -299,16 +296,14 @@ h3
         &lt;li&gt;Suspendisse&lt;/li&gt;  
         &lt;li&gt;Quisque&lt;/li&gt;  
       &lt;/ul&gt;  
-    &lt;/div&gt;
-</code></pre>
+    &lt;/div&gt;</code></pre>
 <p>and finally &quot;footer&quot;:</p>
 <pre><code class="lang-html">    &lt;div id=&quot;footer&quot;&gt;
       &lt;p&gt;
         Proin quis orci eu erat molestie varius. Praesent condimentum  
         orci in lectus. Ut ipsum. In hac habitasse platea dictumst.
       &lt;/p&gt;
-    &lt;/div&gt;
-</code></pre>
+    &lt;/div&gt;</code></pre>
 <p>Again, be careful to preserve the indentation. Verify that the home pages appearance has not changed. Finally, experiment with the folding nature of the sublime editor.</p>
 <p>For instance, try collapsing everything in the page. This can be done by pressing all of the arrow signs in the left hand margin. </p>
 <p>You may be able to generate a view something like this:</p>
@@ -317,18 +312,16 @@ h3
   </div>
  
   <div  class="ui tab segment lab" data-tab="03">
-    <h1 id="body-style">Body style</h1>
+    <h1>Body style</h1>
 <p>We already have an empty style sheet in place. However, it is not yet linked to our home page.</p>
 <p>Insert the following into the <code>&lt;head</code>&gt; element of the home.html to tie in the stylesheet:</p>
-<pre><code class="lang-html">    &lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;home.css&quot; media=&quot;screen&quot; /&gt;
-</code></pre>
+<pre><code class="lang-html">    &lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;home.css&quot; media=&quot;screen&quot; /&gt;</code></pre>
 <p>Now lets try the following simple rule:</p>
 <pre><code class="lang-css">body
 {
   width: 80%;  
   margin: 0 auto;
-}
-</code></pre>
+}</code></pre>
 <p>Save, and refresh. The home page should now look like this:</p>
 <p><img src="./img/02.png" alt=""></p>
 <p>Remember the shortcut rules for CSS. The rule we have introduced is in fact a shorthand for :</p>
@@ -338,8 +331,7 @@ h3
   margin-bottom: 0;
   margin-left: auto;
   margin-right: auto;
-}
-</code></pre>
+}</code></pre>
 <p>Rules can be &#39;commented out&#39; if you want them to be temporarily removed. Figure out the notation for commenting in CSS, and verify this by commenting out your existing rule, and replacing with this one.</p>
 <p>Additionally, discover the equivalent notations for html (quite different).</p>
 <p>This rule is stating that we want no top/bottom for the page, however auto for left and right is resizing the margins to be proportional to the container width (the browser window), and equal in size.</p>
@@ -348,31 +340,28 @@ h3
   </div>
  
   <div  class="ui tab segment lab" data-tab="04">
-    <h1 id="maincontent">Maincontent</h1>
+    <h1>Maincontent</h1>
 <p>We will now attempt to &quot;float&quot; the &quot;maincontent&quot; section to the right, with the &quot;navigation&quot; section hopefully moving in to the left.</p>
 <p>Try the following rule:</p>
-<pre><code class="lang-css"># maincontent
+<pre><code class="lang-css">#maincontent
 {  
   float: right;  
-}
-</code></pre>
+}</code></pre>
 <p>and inspect the results. There should be no change yet. This is because the maincontent section is wide enough to include the full space available. We can adjust this so that is consumes say 80% of the space:</p>
-<pre><code class="lang-css"># maincontent
+<pre><code class="lang-css">#maincontent
 {  
   width: 80%;
   float: right;  
-}
-</code></pre>
+}</code></pre>
 <p>We are now starting to see the beginnings of a multicolumn layout:</p>
 <p><img src="./img/03.png" alt=""></p>
 <p>To get our bearings a bit better, lets introduce a border around the maincontent:</p>
-<pre><code class="lang-css"># maincontent
+<pre><code class="lang-css">#maincontent
 {  
   width: 80%;
   float: right;  
   border: dashed thin;
-}
-</code></pre>
+}</code></pre>
 <p>-</p>
 <p><img src="./img/04.png" alt=""></p>
 <p>As you can see, the &quot;navigation&quot; and &quot;footer&quot; sections have moved up to the left, slipping inside the maincontent. This is because these sections are current obeying the default layout rules. In effect, they will be automatically resizing the fit the available space liberated by the 20% space of the <code>&lt;body</code>&gt; that maincontent has liberated.</p>
@@ -380,60 +369,55 @@ h3
   </div>
  
   <div  class="ui tab segment lab" data-tab="05">
-    <h1 id="navigation">Navigation</h1>
+    <h1>Navigation</h1>
 <p>We can introduce a rule to definitively tie the navigation to 20% of the parent size. and float it left (also turning on a border so we can visualize it easier)</p>
-<pre><code class="lang-css"># navigation
+<pre><code class="lang-css">#navigation
 {  
   width: 20%;
   float: left;  
   border: dashed thin;
-}
-</code></pre>
+}</code></pre>
 <p>This produces some alarming results:</p>
 <p><img src="./img/05.png" alt=""></p>
 <p>The width refers to the content, not padding and margins, so our true width exceeds the available space, so our navigation has been push below where we intended.</p>
 <p>We can easily fix this with a little adjustment:</p>
-<pre><code class="lang-css"># navigation
+<pre><code class="lang-css">#navigation
 {  
   width: 18%;
   float: left;  
   border: dashed thin;
-}
-</code></pre>
+}</code></pre>
 <p><img src="./img/06.png" alt=""></p>
 <p>Experiment with other percentages to get a feel for the layout behaviour</p>
 
   </div>
  
   <div  class="ui tab segment lab" data-tab="06">
-    <h1 id="header-footer">Header, footer</h1>
+    <h1>Header, footer</h1>
 <p>We can now target the headder and footer, and move them into place.</p>
 <p>First the header:</p>
-<pre><code class="lang-css"># header
+<pre><code class="lang-css">#header
 {  
   width: 100%;
   border: dashed thin;
-}
-</code></pre>
+}</code></pre>
 <p>This should not have any effect, as the header, being positioned first, is already in place.</p>
 <p>Now try the footer:</p>
-<pre><code class="lang-css"># footer
+<pre><code class="lang-css">#footer
 {  
   width: 100%;
   border: dashed thin;
-}
-</code></pre>
+}</code></pre>
 <p>Save and refresh:</p>
 <p><img src="./img/07.png" alt=""></p>
 <p>Still not quite right.</p>
 <p>We would like to push the footer &quot;clear&quot; of any existing floated elements, and then for it to occupy the denoted size in that zone. This is accomplished with the &quot;clear&quot; property:</p>
-<pre><code class="lang-css"># footer
+<pre><code class="lang-css">#footer
 {  
   width: 100%;
   clear: both;
   border: dashed thin;
-}
-</code></pre>
+}</code></pre>
 <p>Setting clear to &quot;both&quot;, means clear (move below) and blocks floated left or right.</p>
 <p>Refresh produces a pleasing result:</p>
 <p><img src="./img/08.png" alt=""></p>
@@ -441,7 +425,7 @@ h3
   </div>
  
   <div  class="ui tab segment lab" data-tab="07">
-    <h1 id="simplify">Simplify</h1>
+    <h1>Simplify</h1>
 <p>Our full CSS is now as follows:</p>
 <pre><code class="lang-css">body
 {
@@ -449,40 +433,38 @@ h3
   margin: 0 auto;
 }
 
-# maincontent
+#maincontent
 {  
   width: 80%;
   float: right;  
   border: dashed thin;
 }
 
-# navigation
+#navigation
 {  
   width: 18%;
   float: left;  
   border: dashed thin;
 }
 
-# header
+#header
 {
   width: 100%;
   border: dashed thin;
 }
 
-# footer
+#footer
 {  
   width: 100%;
   clear: both;
   border: dashed thin;
-}
-</code></pre>
+}</code></pre>
 <p>Note the repeated border property. We introduced this property so that we could get a clearer view of our sections. Presumable we would like to remove it prior to production. However, this will mean deleting/commenting it out from every rule.</p>
 <p>This single property appears in every rule. We can create a new &quot;wildcard&quot; rule as follows:</p>
 <pre><code class="lang-css">*
 {
   border: dashed thin;
-}
-</code></pre>
+}</code></pre>
 <p>Now, we can delete this from all of the other rules:</p>
 <pre><code class="lang-css">body
 {
@@ -490,35 +472,34 @@ h3
   margin: 0 auto;
 }
 
-# maincontent
+#maincontent
 {  
   width: 80%;
   float: right;  
 }
 
-# navigation
+#navigation
 {  
   width: 18%;
   float: left;  
 }
 
-# header
+#header
 {
   width: 100%;
 }
 
-# footer
+#footer
 {  
   width: 100%;
   clear: both;
-}
-</code></pre>
+}</code></pre>
 <p>And when we want to remove the border, we can just delete that rule.</p>
 
   </div>
  
   <div  class="ui tab segment lab" data-tab="08">
-    <h1 id="primary-secondary">Primary, secondary</h1>
+    <h1>Primary, secondary</h1>
 <p>We can also further subdivide sections within existing sections. The &quot;maincontent&quot; section currently contains 6 paragraphs:</p>
 <p><img src="./img/09.png" alt=""></p>
 <p>Using nesting, we can divide these into two sections:</p>
@@ -526,38 +507,36 @@ h3
 <p>If we fold this carefully, we can see the following structure:</p>
 <p><img src="./img/11.png" alt=""></p>
 <p>As yet, this has no bearing on the display. However, two simple rules targeting these sections will layout these sections in two columns:</p>
-<pre><code class="lang-css"># primary
+<pre><code class="lang-css">#primary
 {  
   width: 68%;  
   float: left;  
 }
 
-# secondary
+#secondary
 {  
   width: 30%;  
   float: right;
-}
-</code></pre>
+}</code></pre>
 <p>It should render as follows:</p>
 <p><img src="./img/12.png" alt=""></p>
 <p>If we comment out our wildcard rule:</p>
 <pre><code class="lang-css">*
 {
   //border: dashed thin;
-}
-</code></pre>
+}</code></pre>
 <p>This is the final result:</p>
 <p><img src="./img/13.png" alt=""></p>
 
   </div>
  
   <div  class="ui tab segment lab" data-tab="Exercises">
-    <h1 id="exercises">Exercises</h1>
-<h2 id="-archive-of-completed-lab-"># Archive of Completed Lab:</h2>
+    <h1>Exercises</h1>
+<h3>Archive of Completed Lab:</h3>
 <ul>
 <li><a href="./archives/lab04.zip">lab04.zip</a></li>
 </ul>
-<h2 id="-navigation"># Navigation</h2>
+<h3>Navigation</h3>
 <p>Create a copy of home.html - and call it &quot;page1.html&quot;. Keeping the other sections intact, delete the content of the &quot;primary&quot; and &quot;secondary&quot; sections.</p>
 <p>Insert the following into &quot;primary&quot;:</p>
 <pre><code class="lang-html">       &lt;p&gt;
@@ -570,8 +549,7 @@ h3
           vitae iaculis mi est id nisl. Nunc velit odio, luctus in imperdiet eget,
           pulvinar ac quam. Nullam ipsum arcu, euismod vel congue quis, ullamcorper
           sit amet massa. Vivamus et mauris ut ante sagittis sagittis quis eu velit.  
-        &lt;/p&gt;
-</code></pre>
+        &lt;/p&gt;</code></pre>
 <ul>
 <li>and into secondary, the following:</li>
 </ul>
@@ -585,8 +563,7 @@ h3
           non vehicula in, vehicula eget ligula. Suspendisse massa nibh, condimentum ut ornare
           at, vulputate eu augue. Donec cursus ullamcorper facilisis.
           In iaculis convallis elementum.
-        &lt;/p&gt;
-</code></pre>
+        &lt;/p&gt;</code></pre>
 <p>Our navigation section is currently just a list (without links):</p>
 <pre><code class="lang-html">   &lt;div id=&quot;navigation&quot;&gt;  
     &lt;ol&gt;  
@@ -599,8 +576,7 @@ h3
         &lt;li&gt;Suspendisse&lt;/li&gt;  
         &lt;li&gt;Quisque&lt;/li&gt;  
       &lt;/ol&gt;  
-    &lt;/div&gt;
-</code></pre>
+    &lt;/div&gt;</code></pre>
 <p>This section is duplicated in both sections. Introduce hyper links into each, to provide rudimentary navigation:</p>
 <pre><code class="lang-html">   &lt;div id=&quot;navigation&quot;&gt;  
     &lt;ol&gt;  
@@ -613,10 +589,9 @@ h3
         &lt;li&gt;Suspendisse&lt;/li&gt;  
         &lt;li&gt;Quisque&lt;/li&gt;  
       &lt;/ol&gt;  
-    &lt;/div&gt;
-</code></pre>
+    &lt;/div&gt;</code></pre>
 <p>Save and reload - and you should see basic navigation between the two pages.</p>
-<h2 id="-multiple-pages"># Multiple Pages</h2>
+<h3>Multiple Pages</h3>
 <p>Create 2 more pages, with different primary/secondary content, and stitch them into the navigation across all page. You can generate some more content here:</p>
 <ul>
 <li><a href="http://www.lipsum.com">http://www.lipsum.com</a></li>

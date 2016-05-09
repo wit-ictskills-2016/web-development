@@ -95,7 +95,7 @@ h3
   <header class="header item">
     <a href="../index.html">
       <i class="sitemap icon"></i>
-      
+      Starting to Play
     </a>
   </header>
   <div class="right tab-menu menu">
@@ -149,7 +149,7 @@ h3
   </div>
  
   <div  class="ui tab segment lab" data-tab="01">
-    <h1 id="setup">Setup</h1>
+    <h1>Setup</h1>
 <p>Download and unzip thie project:</p>
 <ul>
 <li><a href="./archives/spacebook-static.zip">spacebook.zip</a></li>
@@ -169,17 +169,17 @@ h3
 <p>Remove all of contents of &#39;home.css&#39; - but leave the file itself in place. This will remove all styles, so your home page should look like this:</p>
 <p><img src="./img/02x.png" alt=""></p>
 <p>Most of the links should work - but all pages should be unstyled.</p>
-<h2 id="semanitc-css">semanitc.css</h2>
+<h2>semanitc.css</h2>
 <p>Into the head of home.html, introduce the following entry:</p>
-<pre><code>    &lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;semantic/semantic.min.css&quot; media=&quot;screen&quot; /&gt;
-</code></pre><p>This will include the semantic style sheet into your home page. It will immediately be restyled something like this:</p>
+<pre><code>    &lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;semantic/semantic.min.css&quot; media=&quot;screen&quot; /&gt;</code></pre>
+<p>This will include the semantic style sheet into your home page. It will immediately be restyled something like this:</p>
 <p><img src="img/03x.png" alt=""></p>
 <p>Place the above link is all the pages in the project. You should see small changes in the style throught the site consistent with the above image.</p>
 
   </div>
  
   <div  class="ui tab segment lab" data-tab="02">
-    <h1 id="menu">Menu</h1>
+    <h1>Menu</h1>
 <p>Move the navigation section to top of body (to before the header):</p>
 <pre><code class="lang-html">  &lt;body id=&quot;home&quot;&gt;
      &lt;div id=&quot;navigation&quot;&gt;
@@ -192,16 +192,14 @@ h3
     &lt;/div&gt;
     &lt;div id=&quot;header&quot;&gt;
       &lt;h1&gt;SpaceBook: Homer&#39;s Home Page&lt;/h1&gt;
-    &lt;/div&gt;
-</code></pre>
+    &lt;/div&gt;</code></pre>
 <p>Remove <code>&lt;ul&gt;</code> and <code>&lt;li&gt;</code> elements from within &#39;navigation&#39; and change the id from navigation to the class ui menu:</p>
 <pre><code class="lang-html">    &lt;div class=&quot;ui menu&quot;&gt;
       &lt;a href=&quot;home.html&quot;&gt;Home&lt;/a&gt;
       &lt;a href=&quot;members.html&quot;&gt;Members&lt;/a&gt;  
       &lt;a href=&quot;homeprofile.html&quot;&gt;Profile&lt;/a&gt;  
       &lt;a href=&quot;login.html&quot;&gt;Logout&lt;/a&gt;
-    &lt;/div&gt;
-</code></pre>
+    &lt;/div&gt;</code></pre>
 <p>Remove the &#39;id=&quot;home&quot; from the body element, and replace the div element with a nav</p>
 <pre><code>  &lt;body&gt;
     &lt;nav class=&quot;ui menu&quot;&gt;
@@ -209,15 +207,14 @@ h3
       &lt;a href=&quot;members.html&quot;&gt;Members&lt;/a&gt;  
       &lt;a href=&quot;homeprofile.html&quot;&gt;Profile&lt;/a&gt;  
       &lt;a href=&quot;login.html&quot;&gt;Logout&lt;/a&gt;
-    &lt;/nav&gt;
-</code></pre><p>Examining the page in the browser, we see the navigation section is no longer even visible:</p>
+    &lt;/nav&gt;</code></pre>
+<p>Examining the page in the browser, we see the navigation section is no longer even visible:</p>
 <p><img src="./img/04.png" alt=""></p>
 <p>Introduce class for each menu item as shown:</p>
 <pre><code class="lang-html">      &lt;a class=&quot;ui item&quot; href=&quot;home.html&quot;&gt;Home&lt;/a&gt;
       &lt;a class=&quot;ui item&quot; href=&quot;members.html&quot;&gt;Members&lt;/a&gt;  
       &lt;a class=&quot;ui item&quot; href=&quot;homeprofile.html&quot;&gt;Profile&lt;/a&gt;  
-      &lt;a class=&quot;ui item&quot; href=&quot;login.html&quot;&gt;Logout&lt;/a&gt;
-</code></pre>
+      &lt;a class=&quot;ui item&quot; href=&quot;login.html&quot;&gt;Logout&lt;/a&gt;</code></pre>
 <p>This should introduce a tab like menu along the top:</p>
 <p><img src="./img/04x.png" alt=""></p>
 <p>Replicate the above in:</p>
@@ -227,7 +224,7 @@ h3
 </ul>
 <p><img src="./img/05.png" alt="">
 <img src="./img/06.png" alt=""></p>
-<h2 id="exercise-">Exercise:</h2>
+<h2>Exercise:</h2>
 <p>Explore alternative Menu styles here:</p>
 <ul>
 <li><a href="http://semantic-ui.com/collections/menu.html" target="_blank"> Semantic UI Menus </a></li>
@@ -237,7 +234,7 @@ h3
   </div>
  
   <div  class="ui tab segment lab" data-tab="03">
-    <h1 id="header">Header</h1>
+    <h1>Header</h1>
 <p>This is the Semantic UI approach to headers:</p>
 <ul>
 <li><a href="http://semantic-ui.com/elements/header.html" target="_blank"> Semantic UI Headers </a></li>
@@ -245,14 +242,13 @@ h3
 <p>Examine all of the headers in your pages - for example:</p>
 <pre><code class="lang-html">    &lt;div class=&quot;header&quot;&gt;
       &lt;h1&gt;SpaceBook: Homer&#39;s Home Page&lt;/h1&gt;
-    &lt;/div&gt;
-</code></pre>
+    &lt;/div&gt;</code></pre>
 <p>and replace with something like this:</p>
 <pre><code>  &lt;header&gt;
     &lt;h2 class=&quot;ui header&quot;&gt;SpaceBook: Homer&#39;s Home Page&lt;/h2&gt;
-  &lt;/header&gt;
-</code></pre><p>Similar for members and homeprofile and all the other pages.</p>
-<h1 id="exercise-">Exercise:</h1>
+  &lt;/header&gt;</code></pre>
+<p>Similar for members and homeprofile and all the other pages.</p>
+<h1>Exercise:</h1>
 <p>Explore alternative Header styles here:</p>
 <ul>
 <li><a href="http://semantic-ui.com/elements/header.html" target="_blank"> Semantic UI Headers </a></li>
@@ -262,7 +258,7 @@ h3
   </div>
  
   <div  class="ui tab segment lab" data-tab="04">
-    <h1 id="sections-and-articles">Sections and Articles</h1>
+    <h1>Sections and Articles</h1>
 <p>The &#39;maincontent&#39; div of the home page currently looks like this:</p>
 <pre><code>    &lt;div id=&quot;maincontent&quot;&gt;
       &lt;div id=&quot;primary&quot;&gt;     
@@ -279,8 +275,8 @@ h3
           &lt;li&gt;lisa says...&quot;Move off the couch dad!&quot;&lt;/li&gt;     
         &lt;/ul&gt;      
       &lt;/div&gt;
-    &lt;/div&gt;
-</code></pre><p>Contrast the above with this version:</p>
+    &lt;/div&gt;</code></pre>
+<p>Contrast the above with this version:</p>
 <pre><code>    &lt;section&gt;
       &lt;article&gt;     
         &lt;h3&gt; Friends &lt;/h3&gt; 
@@ -296,18 +292,17 @@ h3
           &lt;li&gt;lisa says...&quot;Move off the couch dad!&quot;&lt;/li&gt;     
         &lt;/ul&gt;      
       &lt;/article&gt;
-    &lt;/section&gt;
-</code></pre><p>Note we are moving to using <code>&lt;section&gt;</code> and <code>&lt;article&gt;</code> elements for greater readability of the document. There should be no change in the UX - as the above are &#39;semantic&#39; (in the html5 sense) elements. These are now more correctly called &#39;section&#39; elements, and are discussed here:</p>
+    &lt;/section&gt;</code></pre>
+<p>Note we are moving to using <code>&lt;section&gt;</code> and <code>&lt;article&gt;</code> elements for greater readability of the document. There should be no change in the UX - as the above are &#39;semantic&#39; (in the html5 sense) elements. These are now more correctly called &#39;section&#39; elements, and are discussed here:</p>
 <ul>
-<li><a href="http://www.w3.org/html/wg/drafts/html/master/sections.html# sections" target="_blank"> HTML Sections </a></li>
+<li><a href="http://www.w3.org/html/wg/drafts/html/master/sections.html#sections" target="_blank"> HTML Sections </a></li>
 </ul>
-<h2 id="segments">Segments</h2>
+<h2>Segments</h2>
 <p>Semantic UI has the notion of a &#39;segment&#39; (as opposed to sections), which offers some interesting options:</p>
 <ul>
 <li><a href="http://semantic-ui.com/elements/segment.html" target="_blank"> HTML Sections </a></li>
 </ul>
-<pre><code class="lang-html">    &lt;section class=&quot;ui segment&quot;&gt;
-</code></pre>
+<pre><code class="lang-html">    &lt;section class=&quot;ui segment&quot;&gt;</code></pre>
 <p>Introducing it in the above should give you a subtle change:</p>
 <p><img src="./img/07.png" alt=""></p>
 <p>Reproduce the above structure in all pages.</p>
@@ -315,7 +310,7 @@ h3
 <ul>
 <li><a href="archives/before-grid/home.html" target="_blank"> Spacebook Semantic </a></li>
 </ul>
-<h1 id="exercise">Exercise</h1>
+<h1>Exercise</h1>
 <p>Explore alternative segment styles here:</p>
 <ul>
 <li><a href="http://semantic-ui.com/elements/segment.html" target="_blank"> HTML Sections </a></li>
@@ -324,7 +319,7 @@ h3
   </div>
  
   <div  class="ui tab segment lab" data-tab="05">
-    <h1 id="grid">Grid</h1>
+    <h1>Grid</h1>
 <p>Examine the main section on &#39;home.html&#39; again - and make the adjustments shown below:</p>
 <pre><code class="lang-html">    &lt;section class=&quot;ui two column grid segment&quot;&gt;
       &lt;article class=&quot;ui column&quot;&gt;     
@@ -341,8 +336,7 @@ h3
           &lt;li&gt;lisa says...&quot;Move off the couch dad!&quot;&lt;/li&gt;     
         &lt;/ul&gt;      
       &lt;/article&gt;
-    &lt;/section&gt;
-</code></pre>
+    &lt;/section&gt;</code></pre>
 <p>This will have a dramatic effect on the page layout:</p>
 <p><img src="./img/08.png" alt=""></p>
 <p>Do same for homeprofile:</p>
@@ -362,9 +356,9 @@ h3
           &lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;Change&quot;  /&gt; 
         &lt;/form&gt;
       &lt;/article&gt;
-    &lt;/section&gt;
-</code></pre><p><img src="./img/09.png" alt=""></p>
-<h2 id="grid-system">Grid System</h2>
+    &lt;/section&gt;</code></pre>
+<p><img src="./img/09.png" alt=""></p>
+<h2>Grid System</h2>
 <p>Explore the grid system here:</p>
 <ul>
 <li><a href="http://semantic-ui.com/collections/grid.html" target="_blank"> Semantic UI </a></li>
@@ -375,7 +369,7 @@ h3
   </div>
  
   <div  class="ui tab segment lab" data-tab="06">
-    <h1 id="navigation-again">Navigation Again</h1>
+    <h1>Navigation Again</h1>
 <p>Currently our navigation is mechanism is not complete - in that it does not give visual feedback on the &#39;active&#39; menu item.</p>
 <p>If we mark one of the menu items as follows in &#39;home.html&#39;:</p>
 <pre><code>    &lt;nav class=&quot;ui menu&quot;&gt;
@@ -383,27 +377,27 @@ h3
       &lt;a class=&quot;ui item&quot; href=&quot;members.html&quot;&gt;Members&lt;/a&gt;  
       &lt;a class=&quot;ui item&quot; href=&quot;homeprofile.html&quot;&gt;Profile&lt;/a&gt;  
       &lt;a class=&quot;ui item&quot; href=&quot;login.html&quot;&gt;Logout&lt;/a&gt;
-    &lt;/nav&gt;
-</code></pre><p>then &#39;members.html&#39; can be like this:</p>
+    &lt;/nav&gt;</code></pre>
+<p>then &#39;members.html&#39; can be like this:</p>
 <pre><code>    &lt;nav class=&quot;ui menu&quot;&gt;
       &lt;a class=&quot;ui item&quot; href=&quot;home.html&quot;&gt;Home&lt;/a&gt;
       &lt;a class=&quot;ui active item&quot; href=&quot;members.html&quot;&gt;Members&lt;/a&gt;  
       &lt;a class=&quot;ui item&quot; href=&quot;homeprofile.html&quot;&gt;Profile&lt;/a&gt;  
       &lt;a class=&quot;ui item&quot; href=&quot;login.html&quot;&gt;Logout&lt;/a&gt;
-    &lt;/nav&gt;
-</code></pre><p>and &#39;homeprofile.html&#39;:</p>
+    &lt;/nav&gt;</code></pre>
+<p>and &#39;homeprofile.html&#39;:</p>
 <pre><code>    &lt;nav class=&quot;ui menu&quot;&gt;
       &lt;a class=&quot;ui item&quot; href=&quot;home.html&quot;&gt;Home&lt;/a&gt;
       &lt;a class=&quot;ui item&quot; href=&quot;members.html&quot;&gt;Members&lt;/a&gt;  
       &lt;a class=&quot;ui active item&quot; href=&quot;homeprofile.html&quot;&gt;Profile&lt;/a&gt;  
       &lt;a class=&quot;ui item&quot; href=&quot;login.html&quot;&gt;Logout&lt;/a&gt;
-    &lt;/nav&gt;
-</code></pre><p>You should see appropriate indication from the menu bar as to which page you are currently on in the site.</p>
+    &lt;/nav&gt;</code></pre>
+<p>You should see appropriate indication from the menu bar as to which page you are currently on in the site.</p>
 
   </div>
  
   <div  class="ui tab segment lab" data-tab="07">
-    <h1 id="forms">Forms</h1>
+    <h1>Forms</h1>
 <p>Designing forms is more complicated that the elements of Semantic UI we have looked at so far.</p>
 <ul>
 <li><a href="http://semantic-ui.com/collections/form.html" target="_blank"> Forms </a></li>
@@ -414,8 +408,8 @@ h3
           &lt;textarea name=&quot;profiletext&quot; cols=&quot;30&quot; rows=&quot;8&quot; &gt;&lt;/textarea&gt;  
           &lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;Change&quot;  /&gt; 
         &lt;/form&gt;
-      &lt;/article&gt;
-</code></pre><p>and replace it with this version:</p>
+      &lt;/article&gt;</code></pre>
+<p>and replace it with this version:</p>
 <pre><code>      &lt;article class=&quot;ui form column&quot;&gt;
         &lt;form action=&quot;homeprofile/changetext&quot; method=&quot;post&quot;&gt;
           &lt;div class=&quot;field&quot;&gt;
@@ -426,25 +420,25 @@ h3
             &lt;input class=&quot;ui blue button&quot; type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;Change&quot; /&gt;
           &lt;/div&gt;  
         &lt;/form&gt;
-      &lt;/article&gt;
-</code></pre><p>There will be some subtle changes to the layout, but we will need to explore these in more depth later. Have a read of some of the documentation in the meantime. </p>
+      &lt;/article&gt;</code></pre>
+<p>There will be some subtle changes to the layout, but we will need to explore these in more depth later. Have a read of some of the documentation in the meantime. </p>
 <p>Notice the structure of though. In general a form consistes of fields. and fields may have labels. Also, note the style of the button after we made the above change.</p>
 
   </div>
  
   <div  class="ui tab segment lab" data-tab="Exercises">
-    <h1 id="exercises">Exercises</h1>
+    <h1>Exercises</h1>
 <p>Archive of the Lab so far</p>
 <ul>
 <li><a href="./archives/spacebook-semantic.zip">spacebook-semantic.zip</a></li>
 </ul>
-<h2 id="exercise-1-containing-segment">Exercise 1: Containing Segment</h2>
+<h2>Exercise 1: Containing Segment</h2>
 <p>Here is a slightly changed version of the same site</p>
 <ul>
 <li><a href="archives/final/home.html" target="_blank"> Improved Spacebook </a></li>
 </ul>
 <p>Can you see the difference? Can you change your lab to be exactly the same as this one? </p>
-<h2 id="exercise-2-list">Exercise 2: List</h2>
+<h2>Exercise 2: List</h2>
 <p>Semantic UI has its own take on how lists can be implemented:</p>
 <ul>
 <li><a href="http://semantic-ui.com/elements/list.html" target="_blank"> Semantic UI Lists </a></li>
